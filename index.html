@@ -2,16 +2,9 @@
 <head>
 <title>COVID DashBoard | ISI Kolkata</title>
 <style>
-html{
-border:0px;
-padding:0px;
-margin:0px;
-}
 body{ overflow-y:hidden; }
-#frameWrap {
-    position:relative;
-    height: 100%;
-    width: 100%;
+.iframe-loading { 
+    background:url(load.gif) center center no-repeat; 
 }
 
 #iframe1 {
@@ -22,16 +15,6 @@ body{ overflow-y:hidden; }
     border:0;
 }
 
-#loader1 {
-    position:absolute;
-    left:40%;
-    top:35%;
-    border-radius:20px;
-    padding:25px;
-    border:1px solid #777777;
-    background:#ffffff;
-    box-shadow:0px 0px 10px #777777;
-}
 </style>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -39,17 +22,10 @@ body{ overflow-y:hidden; }
 <body>
 <table style="width:100%"> <tr> <td rowspan="2" width="5%" align="left"><img src="https://www.isibang.ac.in/~ktws/ISI_logo.jpg" width="80px" alt="isi logo"></td> <td><h1 style="text-align:center;font-family:monospaced;">COVID Dashboard | ISI Kolkata</h1></td> </tr> <tr> <td><p style="text-align:center;font-style: italic;font-family:serif;">This will aid in unlock strategy design and intervention monitoring</p></td> </tr></table>
 
-<div id="frameWrap">
-<img id="loader1" src="load.gif" width="64" height="64" alt="loading gif"/>
-<iframe id="iframe1" src="https://covid19kol.herokuapp.com/index"></iframe>
+<div class="iframe-loading">
+    <iframe id="iframe1" src="https://covid19kol.herokuapp.com/index"  onload="$('.iframe-loading').css('background-image', 'none');"></iframe>
 </div>
-<script>
-    $(document).ready(function () {
-        $('#iframe1').on('load', function () {
-            $('#loader1').hide();
-        });
-    });
-</script>
+
 
 </body>
 </html>
