@@ -23,7 +23,7 @@ body{ overflow-y:hidden; }
 <table style="width:100%"> <tr> <td rowspan="2" width="5%" align="left"><img src="https://www.isibang.ac.in/~ktws/ISI_logo.jpg" width="80px" alt="isi logo"></td> <td><h1 style="text-align:center;font-family:monospaced;">COVID Dashboard | ISI Kolkata</h1></td> </tr> <tr> <td><p style="text-align:center;font-style: italic;font-family:serif;">This will aid in unlock strategy design and intervention monitoring</p></td> </tr></table>
 
 <div class="iframe-loading">
-    <iframe id="iframe1" src="https://covid19kol.herokuapp.com/index"  onload="$('.iframe-loading').css('background-image', 'none');"></iframe>
+    <iframe id="iframe1" src="https://covid19kol.herokuapp.com/index"  onload='document.getElementById("iframe-loading").style.backgroundImage = "none";'></iframe>
 </div>
 
 
